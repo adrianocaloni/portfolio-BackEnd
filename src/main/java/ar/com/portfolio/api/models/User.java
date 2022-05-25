@@ -15,15 +15,14 @@ import org.hibernate.annotations.OnDeleteAction;
 @Entity
 @Table(name = "user")
 public class User {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    
+
     private String user;
     private String pass;
     private String token;
-
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "person_id", nullable = false)
@@ -71,6 +70,4 @@ public class User {
         this.person = person;
     }
 
-
-    
 }
